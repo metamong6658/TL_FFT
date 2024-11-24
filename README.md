@@ -14,4 +14,7 @@ RTL Compiler: Synopsys VCS S-2021.09
 Waveform Viewer: Synopsys Verdi S-2021.09  
 
 ## How to work?
+```bash
+git clone https://github.com/metamong6658/TL_FFT.git
+make
 
