@@ -24,7 +24,6 @@ $ git clone https://github.com/metamong6658/TL_FFT.git
 $ make
 ```
 
----
 When you run `make` in your Linux terminal, the default mode (`mode1`) is executed. The workflow consists of the following steps:
 
 1. **Generate test vectors and twiddle factors**  
