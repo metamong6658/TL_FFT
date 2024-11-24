@@ -62,7 +62,7 @@ In this case, you need to run the scripts and compile the RTL code in the follow
 1. **Run `py_data.py`**  
    This script generates `INPT.hex` and `TF.hex`.
 
-2. **Compile the RTL code**
+2. **Compile the RTL code**  
    **Caution!** Please update the file paths in the following files to match your environment:  
    - `INPT.hex` in `sv_TB_TOP.sv`  
    - `TF.hex` in `vg_TFROM.v`  
