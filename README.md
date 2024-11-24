@@ -55,7 +55,7 @@ In this step, the terminal output will look like this:
 
 ---
 
-## If you don't have VCS/Verdi
+# If you don't have VCS/Verdi
 
 VCS and Verdi require a Synopsys license. If you don't have a license for VCS and Verdi, you can use open-source tools such as Verilator, Icarus, GTKWave, and ModelSim.
 
