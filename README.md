@@ -77,5 +77,14 @@ By following these steps carefully and updating the file paths as needed, you ca
 
 ## Future Updates
 
-For better understanding, we plan to share diverse cases of TL-FFT.  
-We are currently preparing additional modes, which will be uploaded soon. Stay tuned!
+To enhance understanding, we plan to share diverse use cases of TL-FFT.  
+Currently, additional modes are being prepared and will be updated soon.  
+
+You will be able to run various TL-FFT modes by typing the following command in your terminal:  
+`$ make modeX` (e.g., `$ make mode2`)
+
+| MODE | Command       | r  | L  | N          |
+|------|---------------|----|----|------------|
+| I    | make          | 4  | 2  | $2^8$      |
+| II   | make mode2    | 4  | 3  | $2^{12}$   |
+
