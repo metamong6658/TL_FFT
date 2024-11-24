@@ -38,7 +38,7 @@ When you run `make` in your Linux terminal, the default mode (`mode1`) is execut
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d3680425-9319-4b99-8fb3-5ad848542e41" alt="Waveform of DUT" />
   <br>
-  <b>Figure 1:</b> Waveform of DUT
+  <b>Figure 1:</b> Waveform of DUT in testbench
 </p>
 
 4. **Check SQNR**  
