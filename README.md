@@ -75,7 +75,7 @@ By following these steps carefully and updating the file paths as needed, you ca
 
 ---
 
-## Future Updates
+# Various TL-FFT Design Space
 
 To enhance understanding, we plan to share diverse use cases of TL-FFT.  
 Currently, additional modes are being prepared and will be updated soon.  
