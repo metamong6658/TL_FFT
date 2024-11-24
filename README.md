@@ -73,3 +73,9 @@ In this case, you need to run the scripts and compile the RTL code in the follow
    
 By following these steps carefully and updating the file paths as needed, you can successfully run the code and validate the results.
 
+---
+
+## Future Updates
+
+For better understanding, we plan to share diverse cases of TL-FFT.  
+We are currently preparing additional modes, which will be uploaded soon. Stay tuned!
