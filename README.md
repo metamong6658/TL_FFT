@@ -46,11 +46,13 @@ When you run `make` in your Linux terminal, the default mode (`mode1`) is execut
 
 In this step, the terminal output will look like this:
 
-```text
-**************** MODE1 ****************
-- PARAMETER SET: N = 256, r = 4, L = 2
-- SQNR: 88.17 dB
+<div style="background-color: #1e1e1e; color: #dcdcdc; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 14px; line-height: 1.5;">
+
+**************** MODE1 ****************  
+- PARAMETER SET: N = 256, r = 4, L = 2  
+- SQNR: 88.17 dB  
 ***************************************
-```
+
+</div>
 
 
