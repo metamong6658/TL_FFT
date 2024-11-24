@@ -18,5 +18,5 @@ mode2:
 	@rm -rf $(PWD)/MODE2/FILE/*
 	@cd $(PWD)/MODE2; (python3 py_data.py)
 	@cd $(PWD)/MODE2/LOG; (vcs $(vcs_option) -f ../design.vcs) | tee ./vcs_compile.log
-	@cd $(PWD)/MODE2; (python3 py_sqnr.py)
 	@cd $(PWD)/MODE2/LOG; (verdi -dbdir ./simv.daidir)
+	@cd $(PWD)/MODE2; (python3 py_sqnr.py)
