@@ -1,8 +1,6 @@
 # TL_FFT
 
-This repository provides example RTL code to illustrate the complex addressing and permutation scheme of TL-FFT.  
-The default parameters are set as $r = 4$, $L = 2$, and $N = 2^8$, which correspond to Figure 4 in our paper.  
-In this example, the SRAM and ROM are modeled to perform operations with a latency of 1 cycle.  
+This repository provides example RTL code to illustrate the complex addressing and permutation scheme of TL-FFT. The default parameters are set as $r = 4$, $L = 2$, and $N = 2^8$, which correspond to Figure 4 in our paper. In this example, the SRAM and ROM are modeled to perform operations with a latency of 1 cycle.  
 
 ---
 
