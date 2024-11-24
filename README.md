@@ -35,8 +35,6 @@ When you run `make` in your Linux terminal, the default mode (`mode1`) is execut
 3. **View waveforms**  
    Synopsys Verdi opens the waveform viewer, allowing you to inspect how control signals and appropriate addresses for each SRAM are generated.
 
-![Waveform of DUT](https://github.com/user-attachments/assets/b43cd25b-d4af-4104-b518-f042a87f16f9)
-
 4. **Check SQNR**  
    The `py_sqnr.py` script computes the Signal-to-Quantization Noise Ratio (SQNR) and compares the results between the Python implementation and the RTL implementation.
 
