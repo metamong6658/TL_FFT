@@ -4,7 +4,7 @@ This repository provides example RTL code to illustrate the complex addressing a
 
 ---
 
-## Environment
+# Environment
 
 The code has been developed and tested in the following environment:  
 
@@ -15,7 +15,7 @@ The code has been developed and tested in the following environment:
 
 ---
 
-## How to Use
+# How to Use
 
 To clone and run the project, execute the following commands in your Linux terminal:
 
