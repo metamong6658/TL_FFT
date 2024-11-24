@@ -25,9 +25,6 @@ $ make
 ```
 
 ---
-
-## Brief Description
-
 When you run `make` in your Linux terminal, the default mode (`mode1`) is executed. The workflow consists of the following steps:
 
 1. **Generate test vectors and twiddle factors**  
