@@ -50,6 +50,6 @@ In this step, the terminal output will look like this:
 **************** MODE1 ****************<br>
 - PARAMETER SET: N = 256, r = 4, L = 2<br>
 - SQNR: 88.17 dB<br>
-***************************************
+*****************************************
 </div>
 
