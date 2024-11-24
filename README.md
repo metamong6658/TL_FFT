@@ -44,15 +44,6 @@ When you run `make` in your Linux terminal, the default mode (`mode1`) is execut
 4. **Check SQNR**  
    The `py_sqnr.py` script computes the Signal-to-Quantization Noise Ratio (SQNR) and compares the results between the Python implementation and the RTL implementation.
 
-In this step, the terminal output will look like this:
-
-```text
-**************** MODE1 ****************
-- PARAMETER SET: N = 256, r = 4, L = 2
-- SQNR: 88.17 dB
-***************************************
-```
-
 ---
 
 # If you don't have VCS/Verdi
