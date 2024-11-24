@@ -46,13 +46,24 @@ When you run `make` in your Linux terminal, the default mode (`mode1`) is execut
 
 In this step, the terminal output will look like this:
 
-<div style="background-color: #1e1e1e; color: #dcdcdc; padding: 5px; border-radius: 4px; font-family: monospace; font-size: 14px; line-height: 1.5;">
-
-**************** MODE1 ****************  
-- PARAMETER SET: N = 256, r = 4, L = 2  
-- SQNR: 88.17 dB  
+```text
+**************** MODE1 ****************
+- PARAMETER SET: N = 256, r = 4, L = 2
+- SQNR: 88.17 dB
 ***************************************
+```
 
-</div>
+---
+
+## If you don't have VCS/Verdi
+
+VCS and Verdi require a Synopsys license. If you don't have a license for VCS and Verdi, you can use open-source tools such as Verilator, Icarus, GTKWave, and ModelSim.
+
+Here are the links to these tools:
+
+- [Verilator](https://github.com/verilator/verilator.git)  
+- [Icarus Verilog](https://bleyer.org/icarus/)  
+- [GTKWave](https://github.com/gtkwave/gtkwave.git)  
+- [ModelSim (Intel Quartus II Web Edition)](https://www.intel.com/content/www/us/en/software-kit/666221/intel-quartus-ii-web-edition-design-software-version-13-1-for-windows.html)
 
 
