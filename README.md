@@ -11,6 +11,7 @@ Python: Python 3.6.8
 
 RTL Compiler: Synopsys VCS S-2021.09  
 
-Waveform View: Synopsys Verdi S-2021.09  
+Waveform Viewer: Synopsys Verdi S-2021.09  
 
+## How to work?
 
