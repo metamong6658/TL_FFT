@@ -57,4 +57,21 @@ Here are the links to these tools:
 - [GTKWave](https://github.com/gtkwave/gtkwave.git)  
 - [ModelSim (Intel Quartus II Web Edition)](https://www.intel.com/content/www/us/en/software-kit/666221/intel-quartus-ii-web-edition-design-software-version-13-1-for-windows.html)
 
+In this case, you need to run the scripts and compile the RTL code in the following sequence:
+
+1. **Run `py_data.py`**  
+   This script generates `INPT.hex` and `TF.hex` under the `FILE` directory.  
+
+2. **Compile the RTL code**
+   **Caution!** Please update the file paths in the following files to match your environment:  
+   - `INPT.hex` in `sv_TB_TOP.sv`  
+   - `TF.hex` in `vg_TFROM.v`  
+   During this step, `OUPT.hex` is generated.  
+   **Caution!** Ensure the file path of `OUPT.hex` is correctly specified in `sv_TB_TOP.sv`.
+
+4. **Run `py_sqnr.py`**  
+   This script compares the results from the Python and RTL implementations.  
+   **Caution!** Verify the file paths for `INPT.hex` and `OUPT.hex` in your environment.
+
+By following these steps carefully and updating the file paths as needed, you can successfully run the code and validate the results.
 
