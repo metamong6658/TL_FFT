@@ -64,15 +64,12 @@ In this case, you need to run the scripts and compile the RTL code in the follow
 
 2. **Compile the RTL code**  
    **Caution!** Please update the file paths in the following files to match your environment:  
-   - `INPT.hex` in `sv_TB_TOP.sv`  
+   - `INPT.hex` in `sv_TB_TOP.sv`
+   - `OUPT.hex` in `sv_TB_TOP.sv`
    - `TF.hex` in `vg_TFROM.v`
-
- During this step, `OUPT.hex` is generated.  
- **Caution!** Ensure the file path of `OUPT.hex` is correctly specified in `sv_TB_TOP.sv`.
 
 4. **Run `py_sqnr.py`**  
    This script compares the results from the Python and RTL implementations.  
-   **Caution!** Verify the file paths for `INPT.hex` and `OUPT.hex` in your environment.
-
+   
 By following these steps carefully and updating the file paths as needed, you can successfully run the code and validate the results.
 
