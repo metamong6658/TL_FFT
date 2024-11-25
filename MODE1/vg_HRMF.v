@@ -203,7 +203,7 @@ module MDC2 (
 );
 
 reg  [63:0] T  [0:3];
-wire [63:0] T_ [0:3];
+wire [63:0] T_ [0:1];
 
 always @(posedge CLK or negedge RSTn) begin
     if(!RSTn) {T[1],T[0]} <= {128{1'b0}};
