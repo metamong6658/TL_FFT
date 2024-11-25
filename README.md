@@ -88,4 +88,4 @@ You will be able to run various TL-FFT modes by typing the following command in 
 | I    | make          | 4  | 2  | $2^{8}$    |
 | II   | make mode2    | 4  | 3  | $2^{12}$   |
 | III  | make mode3    | 4  | 1  | $2^{4}$    |
-
+| IV   | make mode4    | 8  | 2  | $2^{12}$   |
