@@ -75,7 +75,7 @@ always @(posedge CLK or negedge RSTn) begin
     end
     else begin
         case (STATE)
-           ST_IDLE : STATE <= START  ? ST_INPT : STATE;
+           ST_IDLE : STATE <= START ? ST_INPT : STATE;
            ST_INPT : STATE <= (CLR) ? ST_ITR1 : STATE;
            ST_ITR1 : STATE <= (CLR) ? ST_ITR2 : STATE;
            ST_ITR2 : STATE <= (CLR) ? ST_OUPT : STATE;
