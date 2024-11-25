@@ -80,7 +80,7 @@ By following these steps carefully and updating the file paths as needed, you ca
 To enhance understanding, we plan to share diverse use cases of TL-FFT.  
 Currently, additional modes are being prepared and will be updated soon.  
 
-You will be able to run various TL-FFT modes by typing the following command in your terminal: `$ make modeX` (e.g., `$ make mode2`)  
+You will be able to run various TL-FFT modes by typing the command in your terminal: `$ make modeX` (e.g., `$ make mode2`)  
 
 | MODE | Command       | r  | L  | N          |
 |------|---------------|----|----|------------|
