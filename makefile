@@ -50,3 +50,13 @@ mode5:
 	@cd $(PWD)/MODE5/LOG; (vcs $(vcs_option) -f ../design.vcs) | tee ./vcs_compile.log
 	@cd $(PWD)/MODE5/LOG; (verdi -dbdir ./simv.daidir)
 	@cd $(PWD)/MODE5; (python3 py_sqnr.py)
+
+mode6:
+	@mkdir -p $(PWD)/MODE6/LOG
+	@mkdir -p $(PWD)/MODE6/FILE
+	@rm -rf $(PWD)/MODE6/LOG/*
+	@rm -rf $(PWD)/MODE6/FILE/*
+	@cd $(PWD)/MODE6; (python3 py_data.py)
+	@cd $(PWD)/MODE6/LOG; (vcs $(vcs_option) -f ../design.vcs) | tee ./vcs_compile.log
+	@cd $(PWD)/MODE6/LOG; (verdi -dbdir ./simv.daidir)
+	@cd $(PWD)/MODE6; (python3 py_sqnr.py)
