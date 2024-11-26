@@ -98,7 +98,7 @@ We recommend analyzing `MODE I`, `MODE II`, and `MODE III` to observe how varyin
 
 We include two additional modes for $r = 2$, representing the two-level factorization case. We hope this helps you understand the notable efficiency of our TL-FFT, which leverages three-level factorization, compared to conventional two-level factorization FFT architectures.  
 
-# Thanks for Watching
+# Future Work
 
 Thank you for exploring our work! The TL-FFT is an efficient FFT design optimized for accelerating polynomial multiplication by leveraging FFT, like TFHE. However, certain algorithms, such as CKKS, require the use of NTT instead of FFT. Unfortunately, the NTT algorithm has limitations when it comes to adopting high-radix techniques like those used in FFT, making it challenging to directly map TL-FFT to NTT. We are committed to exploring solutions to adapt TL-FFT into an efficient NTT accelerator. See you again soon!  
 
