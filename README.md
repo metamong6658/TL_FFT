@@ -77,7 +77,8 @@ By following these steps carefully and updating the file paths as needed, you ca
 
 # Various TL-FFT Design Space
 
-To enhance understanding, we decide to share diverse use cases of TL-FFT. You will be able to run various TL-FFT modes by typing the following command in your terminal:  
+To enhance understanding, we decide to share diverse use cases of TL-FFT.  
+You will be able to run various TL-FFT modes by typing the following command in your terminal:  
 `$ make modeX` (e.g., `$ make mode2`)  
 
 | MODE | Command       | r  | L  | N          |
@@ -88,6 +89,8 @@ To enhance understanding, we decide to share diverse use cases of TL-FFT. You wi
 | IV   | make mode4    | 8  | 2  | $2^{12}$   |
 | V    | make mode5    | 16 | 2  | $2^{16}$   |
 
-We recommend analyzing `MODE I`, `MODE II`, and `MODE III` to observe how varying $L$ affects the outcome when $r$ is fixed, and exploring `MODE I`, `MODE IV`, and `MODE V` to examine the impact of varying $r$ while keeping $L$ constant.
+We recommend analyzing `MODE I`, `MODE II`, and `MODE III` to observe how varying $L$ affects the outcome when $r$ is fixed, and exploring `MODE I`, `MODE IV`, and `MODE V` to examine the impact of varying $r$ while keeping $L$ constant.  
+
+
 
 
