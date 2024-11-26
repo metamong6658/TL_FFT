@@ -1,0 +1,594 @@
+`timescale 1ns/1ps
+
+module TOP (
+    // CONTROL
+    input  [0:0]  CLK,
+    input  [0:0]  RSTn,
+    input  [0:0]  START,
+    output [0:0]  DONE,
+    // DATA
+    input  [63:0] D0,
+    input  [63:0] D1,
+    input  [63:0] D2,
+    input  [63:0] D3,
+    input  [63:0] D4,
+    input  [63:0] D5,
+    input  [63:0] D6,
+    input  [63:0] D7,
+    input  [63:0] D8,
+    input  [63:0] D9,
+    input  [63:0] D10,
+    input  [63:0] D11,
+    input  [63:0] D12,
+    input  [63:0] D13,
+    input  [63:0] D14,
+    input  [63:0] D15,
+    output [63:0] Q0,
+    output [63:0] Q1,
+    output [63:0] Q2,
+    output [63:0] Q3,
+    output [63:0] Q4,
+    output [63:0] Q5,
+    output [63:0] Q6,
+    output [63:0] Q7,
+    output [63:0] Q8,
+    output [63:0] Q9,
+    output [63:0] Q10,
+    output [63:0] Q11,
+    output [63:0] Q12,
+    output [63:0] Q13,
+    output [63:0] Q14,
+    output [63:0] Q15
+);
+
+wire [0:0] SEL_EXTN;
+wire [0:0] SEL_ITR;
+wire [3:0] SEL_PERMW;
+wire [3:0] SEL_PERMR;
+wire [3:0] SEL_HRMF;
+
+wire [0:0] WE_FSC;
+wire [0:0] WE_IOBUF;
+
+wire [11:0] ADDR0_FSC;
+wire [11:0] ADDR1_FSC;
+wire [11:0] ADDR2_FSC;
+wire [11:0] ADDR3_FSC;
+wire [11:0] ADDR4_FSC;
+wire [11:0] ADDR5_FSC;
+wire [11:0] ADDR6_FSC;
+wire [11:0] ADDR7_FSC;
+wire [11:0] ADDR8_FSC;
+wire [11:0] ADDR9_FSC;
+wire [11:0] ADDR10_FSC;
+wire [11:0] ADDR11_FSC;
+wire [11:0] ADDR12_FSC;
+wire [11:0] ADDR13_FSC;
+wire [11:0] ADDR14_FSC;
+wire [11:0] ADDR15_FSC;
+
+wire [11:0] ADDR0_IOBUF;
+wire [11:0] ADDR1_IOBUF;
+wire [11:0] ADDR2_IOBUF;
+wire [11:0] ADDR3_IOBUF;
+wire [11:0] ADDR4_IOBUF;
+wire [11:0] ADDR5_IOBUF;
+wire [11:0] ADDR6_IOBUF;
+wire [11:0] ADDR7_IOBUF;
+wire [11:0] ADDR8_IOBUF;
+wire [11:0] ADDR9_IOBUF;
+wire [11:0] ADDR10_IOBUF;
+wire [11:0] ADDR11_IOBUF;
+wire [11:0] ADDR12_IOBUF;
+wire [11:0] ADDR13_IOBUF;
+wire [11:0] ADDR14_IOBUF;
+wire [11:0] ADDR15_IOBUF;
+
+wire [15:0] EXP0;
+wire [15:0] EXP1;
+wire [15:0] EXP2;
+wire [15:0] EXP3;
+wire [15:0] EXP4;
+wire [15:0] EXP5;
+wire [15:0] EXP6;
+wire [15:0] EXP7;
+wire [15:0] EXP8;
+wire [15:0] EXP9;
+wire [15:0] EXP10;
+wire [15:0] EXP11;
+wire [15:0] EXP12;
+wire [15:0] EXP13;
+wire [15:0] EXP14;
+wire [15:0] EXP15;
+
+wire [63:0] TF0;
+wire [63:0] TF1;
+wire [63:0] TF2;
+wire [63:0] TF3;
+wire [63:0] TF4;
+wire [63:0] TF5;
+wire [63:0] TF6;
+wire [63:0] TF7;
+wire [63:0] TF8;
+wire [63:0] TF9;
+wire [63:0] TF10;
+wire [63:0] TF11;
+wire [63:0] TF12;
+wire [63:0] TF13;
+wire [63:0] TF14;
+wire [63:0] TF15;
+
+wire [63:0] Q0_IOBUF;
+wire [63:0] Q1_IOBUF;
+wire [63:0] Q2_IOBUF;
+wire [63:0] Q3_IOBUF;
+wire [63:0] Q4_IOBUF;
+wire [63:0] Q5_IOBUF;
+wire [63:0] Q6_IOBUF;
+wire [63:0] Q7_IOBUF;
+wire [63:0] Q8_IOBUF;
+wire [63:0] Q9_IOBUF;
+wire [63:0] Q10_IOBUF;
+wire [63:0] Q11_IOBUF;
+wire [63:0] Q12_IOBUF;
+wire [63:0] Q13_IOBUF;
+wire [63:0] Q14_IOBUF;
+wire [63:0] Q15_IOBUF;
+
+wire [63:0] Q0_FSC;
+wire [63:0] Q1_FSC;
+wire [63:0] Q2_FSC;
+wire [63:0] Q3_FSC;
+wire [63:0] Q4_FSC;
+wire [63:0] Q5_FSC;
+wire [63:0] Q6_FSC;
+wire [63:0] Q7_FSC;
+wire [63:0] Q8_FSC;
+wire [63:0] Q9_FSC;
+wire [63:0] Q10_FSC;
+wire [63:0] Q11_FSC;
+wire [63:0] Q12_FSC;
+wire [63:0] Q13_FSC;
+wire [63:0] Q14_FSC;
+wire [63:0] Q15_FSC;
+
+wire [63:0] Q0_HRMF;
+wire [63:0] Q1_HRMF;
+wire [63:0] Q2_HRMF;
+wire [63:0] Q3_HRMF;
+wire [63:0] Q4_HRMF;
+wire [63:0] Q5_HRMF;
+wire [63:0] Q6_HRMF;
+wire [63:0] Q7_HRMF;
+wire [63:0] Q8_HRMF;
+wire [63:0] Q9_HRMF;
+wire [63:0] Q10_HRMF;
+wire [63:0] Q11_HRMF;
+wire [63:0] Q12_HRMF;
+wire [63:0] Q13_HRMF;
+wire [63:0] Q14_HRMF;
+wire [63:0] Q15_HRMF;
+
+wire [63:0] Q0_INTERFACE1;
+wire [63:0] Q1_INTERFACE1;
+wire [63:0] Q2_INTERFACE1;
+wire [63:0] Q3_INTERFACE1;
+wire [63:0] Q4_INTERFACE1;
+wire [63:0] Q5_INTERFACE1;
+wire [63:0] Q6_INTERFACE1;
+wire [63:0] Q7_INTERFACE1;
+wire [63:0] Q8_INTERFACE1;
+wire [63:0] Q9_INTERFACE1;
+wire [63:0] Q10_INTERFACE1;
+wire [63:0] Q11_INTERFACE1;
+wire [63:0] Q12_INTERFACE1;
+wire [63:0] Q13_INTERFACE1;
+wire [63:0] Q14_INTERFACE1;
+wire [63:0] Q15_INTERFACE1;
+
+wire [63:0] Q0_INTERFACE2;
+wire [63:0] Q1_INTERFACE2;
+wire [63:0] Q2_INTERFACE2;
+wire [63:0] Q3_INTERFACE2;
+wire [63:0] Q4_INTERFACE2;
+wire [63:0] Q5_INTERFACE2;
+wire [63:0] Q6_INTERFACE2;
+wire [63:0] Q7_INTERFACE2;
+wire [63:0] Q8_INTERFACE2;
+wire [63:0] Q9_INTERFACE2;
+wire [63:0] Q10_INTERFACE2;
+wire [63:0] Q11_INTERFACE2;
+wire [63:0] Q12_INTERFACE2;
+wire [63:0] Q13_INTERFACE2;
+wire [63:0] Q14_INTERFACE2;
+wire [63:0] Q15_INTERFACE2;
+
+// CTRL
+CTRL I_CTRL_0 (
+    // EXTERNAL I/O
+    .CLK(CLK),
+    .RSTn(RSTn),
+    .START(START),
+    .DONE(DONE),
+    // INTERNAL I/O
+    .SEL_EXTN(SEL_EXTN),
+    .SEL_ITR(SEL_ITR),
+    .SEL_PERMW(SEL_PERMW),
+    .SEL_PERMR(SEL_PERMR),
+    .SEL_HRMF(SEL_HRMF),
+    .WE_FSC(WE_FSC),
+    .WE_IOBUF(WE_IOBUF),
+    .ADDR0_FSC(ADDR0_FSC),
+    .ADDR1_FSC(ADDR1_FSC),
+    .ADDR2_FSC(ADDR2_FSC),
+    .ADDR3_FSC(ADDR3_FSC),
+    .ADDR4_FSC(ADDR4_FSC),
+    .ADDR5_FSC(ADDR5_FSC),
+    .ADDR6_FSC(ADDR6_FSC),
+    .ADDR7_FSC(ADDR7_FSC),
+    .ADDR8_FSC(ADDR8_FSC),
+    .ADDR9_FSC(ADDR9_FSC),
+    .ADDR10_FSC(ADDR10_FSC),
+    .ADDR11_FSC(ADDR11_FSC),
+    .ADDR12_FSC(ADDR12_FSC),
+    .ADDR13_FSC(ADDR13_FSC),
+    .ADDR14_FSC(ADDR14_FSC),
+    .ADDR15_FSC(ADDR15_FSC),
+    .ADDR0_IOBUF(ADDR0_IOBUF),
+    .ADDR1_IOBUF(ADDR1_IOBUF),
+    .ADDR2_IOBUF(ADDR2_IOBUF),
+    .ADDR3_IOBUF(ADDR3_IOBUF),
+    .ADDR4_IOBUF(ADDR4_IOBUF),
+    .ADDR5_IOBUF(ADDR5_IOBUF),
+    .ADDR6_IOBUF(ADDR6_IOBUF),
+    .ADDR7_IOBUF(ADDR7_IOBUF),
+    .ADDR8_IOBUF(ADDR8_IOBUF),
+    .ADDR9_IOBUF(ADDR9_IOBUF),
+    .ADDR10_IOBUF(ADDR10_IOBUF),
+    .ADDR11_IOBUF(ADDR11_IOBUF),
+    .ADDR12_IOBUF(ADDR12_IOBUF),
+    .ADDR13_IOBUF(ADDR13_IOBUF),
+    .ADDR14_IOBUF(ADDR14_IOBUF),
+    .ADDR15_IOBUF(ADDR15_IOBUF),
+    .EXP0(EXP0),
+    .EXP1(EXP1),
+    .EXP2(EXP2),
+    .EXP3(EXP3),
+    .EXP4(EXP4),
+    .EXP5(EXP5),
+    .EXP6(EXP6),
+    .EXP7(EXP7),
+    .EXP8(EXP8),
+    .EXP9(EXP9),
+    .EXP10(EXP10),
+    .EXP11(EXP11),
+    .EXP12(EXP12),
+    .EXP13(EXP13),
+    .EXP14(EXP14),
+    .EXP15(EXP15)
+);
+
+M16SRAM IOBUF (
+    .CLK(CLK),
+    .WE(WE_IOBUF),
+    .ADDR0(ADDR0_IOBUF),
+    .ADDR1(ADDR1_IOBUF),
+    .ADDR2(ADDR2_IOBUF),
+    .ADDR3(ADDR3_IOBUF),
+    .ADDR4(ADDR4_IOBUF),
+    .ADDR5(ADDR5_IOBUF),
+    .ADDR6(ADDR6_IOBUF),
+    .ADDR7(ADDR7_IOBUF),
+    .ADDR8(ADDR8_IOBUF),
+    .ADDR9(ADDR9_IOBUF),
+    .ADDR10(ADDR10_IOBUF),
+    .ADDR11(ADDR11_IOBUF),
+    .ADDR12(ADDR12_IOBUF),
+    .ADDR13(ADDR13_IOBUF),
+    .ADDR14(ADDR14_IOBUF),
+    .ADDR15(ADDR15_IOBUF),
+    .D0(Q0_INTERFACE2),
+    .D1(Q1_INTERFACE2),
+    .D2(Q2_INTERFACE2),
+    .D3(Q3_INTERFACE2),
+    .D4(Q4_INTERFACE2),
+    .D5(Q5_INTERFACE2),
+    .D6(Q6_INTERFACE2),
+    .D7(Q7_INTERFACE2),
+    .D8(Q8_INTERFACE2),
+    .D9(Q9_INTERFACE2),
+    .D10(Q10_INTERFACE2),
+    .D11(Q11_INTERFACE2),
+    .D12(Q12_INTERFACE2),
+    .D13(Q13_INTERFACE2),
+    .D14(Q14_INTERFACE2),
+    .D15(Q15_INTERFACE2),
+    .Q0(Q0_IOBUF),
+    .Q1(Q1_IOBUF),
+    .Q2(Q2_IOBUF),
+    .Q3(Q3_IOBUF),
+    .Q4(Q4_IOBUF),
+    .Q5(Q5_IOBUF),
+    .Q6(Q6_IOBUF),
+    .Q7(Q7_IOBUF),
+    .Q8(Q8_IOBUF),
+    .Q9(Q9_IOBUF),
+    .Q10(Q10_IOBUF),
+    .Q11(Q11_IOBUF),
+    .Q12(Q12_IOBUF),
+    .Q13(Q13_IOBUF),
+    .Q14(Q14_IOBUF),
+    .Q15(Q15_IOBUF)
+);
+
+M16SRAM FSC (
+    .CLK(CLK),
+    .WE(WE_FSC),
+    .ADDR0(ADDR0_FSC),
+    .ADDR1(ADDR1_FSC),
+    .ADDR2(ADDR2_FSC),
+    .ADDR3(ADDR3_FSC),
+    .ADDR4(ADDR4_FSC),
+    .ADDR5(ADDR5_FSC),
+    .ADDR6(ADDR6_FSC),
+    .ADDR7(ADDR7_FSC),
+    .ADDR8(ADDR8_FSC),
+    .ADDR9(ADDR9_FSC),
+    .ADDR10(ADDR10_FSC),
+    .ADDR11(ADDR11_FSC),
+    .ADDR12(ADDR12_FSC),
+    .ADDR13(ADDR13_FSC),
+    .ADDR14(ADDR14_FSC),
+    .ADDR15(ADDR15_FSC),
+    .D0(Q0_INTERFACE2),
+    .D1(Q1_INTERFACE2),
+    .D2(Q2_INTERFACE2),
+    .D3(Q3_INTERFACE2),
+    .D4(Q4_INTERFACE2),
+    .D5(Q5_INTERFACE2),
+    .D6(Q6_INTERFACE2),
+    .D7(Q7_INTERFACE2),
+    .D8(Q8_INTERFACE2),
+    .D9(Q9_INTERFACE2),
+    .D10(Q10_INTERFACE2),
+    .D11(Q11_INTERFACE2),
+    .D12(Q12_INTERFACE2),
+    .D13(Q13_INTERFACE2),
+    .D14(Q14_INTERFACE2),
+    .D15(Q15_INTERFACE2),
+    .Q0(Q0_FSC),
+    .Q1(Q1_FSC),
+    .Q2(Q2_FSC),
+    .Q3(Q3_FSC),
+    .Q4(Q4_FSC),
+    .Q5(Q5_FSC),
+    .Q6(Q6_FSC),
+    .Q7(Q7_FSC),
+    .Q8(Q8_FSC),
+    .Q9(Q9_FSC),
+    .Q10(Q10_FSC),
+    .Q11(Q11_FSC),
+    .Q12(Q12_FSC),
+    .Q13(Q13_FSC),
+    .Q14(Q14_FSC),
+    .Q15(Q15_FSC)
+);
+
+INTERFACE1 I_INTERFACE1_0 (
+    .SEL_ITR(SEL_ITR),
+    .SEL_PERMR(SEL_PERMR),
+    .D0_IOBUF(Q0_IOBUF),
+    .D1_IOBUF(Q1_IOBUF),
+    .D2_IOBUF(Q2_IOBUF),
+    .D3_IOBUF(Q3_IOBUF),
+    .D4_IOBUF(Q4_IOBUF),
+    .D5_IOBUF(Q5_IOBUF),
+    .D6_IOBUF(Q6_IOBUF),
+    .D7_IOBUF(Q7_IOBUF),
+    .D8_IOBUF(Q8_IOBUF),
+    .D9_IOBUF(Q9_IOBUF),
+    .D10_IOBUF(Q10_IOBUF),
+    .D11_IOBUF(Q11_IOBUF),
+    .D12_IOBUF(Q12_IOBUF),
+    .D13_IOBUF(Q13_IOBUF),
+    .D14_IOBUF(Q14_IOBUF),
+    .D15_IOBUF(Q15_IOBUF),
+    .D0_FSC(Q0_FSC),
+    .D1_FSC(Q1_FSC),
+    .D2_FSC(Q2_FSC),
+    .D3_FSC(Q3_FSC),
+    .D4_FSC(Q4_FSC),
+    .D5_FSC(Q5_FSC),
+    .D6_FSC(Q6_FSC),
+    .D7_FSC(Q7_FSC),
+    .D8_FSC(Q8_FSC),
+    .D9_FSC(Q9_FSC),
+    .D10_FSC(Q10_FSC),
+    .D11_FSC(Q11_FSC),
+    .D12_FSC(Q12_FSC),
+    .D13_FSC(Q13_FSC),
+    .D14_FSC(Q14_FSC),
+    .D15_FSC(Q15_FSC),
+    .Q0(Q0_INTERFACE1),
+    .Q1(Q1_INTERFACE1),
+    .Q2(Q2_INTERFACE1),
+    .Q3(Q3_INTERFACE1),
+    .Q4(Q4_INTERFACE1),
+    .Q5(Q5_INTERFACE1),
+    .Q6(Q6_INTERFACE1),
+    .Q7(Q7_INTERFACE1),
+    .Q8(Q8_INTERFACE1),
+    .Q9(Q9_INTERFACE1),
+    .Q10(Q10_INTERFACE1),
+    .Q11(Q11_INTERFACE1),
+    .Q12(Q12_INTERFACE1),
+    .Q13(Q13_INTERFACE1),
+    .Q14(Q14_INTERFACE1),
+    .Q15(Q15_INTERFACE1)
+);
+
+HRMF I_HRMF_0 (
+    // CONTROL
+    .CLK(CLK),
+    .RSTn(RSTn),
+    .SEL_HRMF(SEL_HRMF),
+    // INPUT
+    .D0(Q0_INTERFACE1),
+    .D1(Q1_INTERFACE1),
+    .D2(Q2_INTERFACE1),
+    .D3(Q3_INTERFACE1),
+    .D4(Q4_INTERFACE1),
+    .D5(Q5_INTERFACE1),
+    .D6(Q6_INTERFACE1),
+    .D7(Q7_INTERFACE1),
+    .D8(Q8_INTERFACE1),
+    .D9(Q9_INTERFACE1),
+    .D10(Q10_INTERFACE1),
+    .D11(Q11_INTERFACE1),
+    .D12(Q12_INTERFACE1),
+    .D13(Q13_INTERFACE1),
+    .D14(Q14_INTERFACE1),
+    .D15(Q15_INTERFACE1),
+    .TF0(TF0),
+    .TF1(TF1),
+    .TF2(TF2),
+    .TF3(TF3),
+    .TF4(TF4),
+    .TF5(TF5),
+    .TF6(TF6),
+    .TF7(TF7),
+    .TF8(TF8),
+    .TF9(TF9),
+    .TF10(TF10),
+    .TF11(TF11),
+    .TF12(TF12),
+    .TF13(TF13),
+    .TF14(TF14),
+    .TF15(TF15),
+    // OUTPUT
+    .Q0(Q0_HRMF),
+    .Q1(Q1_HRMF),
+    .Q2(Q2_HRMF),
+    .Q3(Q3_HRMF),
+    .Q4(Q4_HRMF),
+    .Q5(Q5_HRMF),
+    .Q6(Q6_HRMF),
+    .Q7(Q7_HRMF),
+    .Q8(Q8_HRMF),
+    .Q9(Q9_HRMF),
+    .Q10(Q10_HRMF),
+    .Q11(Q11_HRMF),
+    .Q12(Q12_HRMF),
+    .Q13(Q13_HRMF),
+    .Q14(Q14_HRMF),
+    .Q15(Q15_HRMF)
+);
+
+INTERFACE2 I_INTERFACE2_0 (
+    .SEL_EXTN(SEL_EXTN),
+    .SEL_PERMW(SEL_PERMW),
+    .D0_EXTN(D0),
+    .D1_EXTN(D1),
+    .D2_EXTN(D2),
+    .D3_EXTN(D3),
+    .D4_EXTN(D4),
+    .D5_EXTN(D5),
+    .D6_EXTN(D6),
+    .D7_EXTN(D7),
+    .D8_EXTN(D8),
+    .D9_EXTN(D9),
+    .D10_EXTN(D10),
+    .D11_EXTN(D11),
+    .D12_EXTN(D12),
+    .D13_EXTN(D13),
+    .D14_EXTN(D14),
+    .D15_EXTN(D15),
+    .D0_HRMF(Q0_HRMF),
+    .D1_HRMF(Q1_HRMF),
+    .D2_HRMF(Q2_HRMF),
+    .D3_HRMF(Q3_HRMF),
+    .D4_HRMF(Q4_HRMF),
+    .D5_HRMF(Q5_HRMF),
+    .D6_HRMF(Q6_HRMF),
+    .D7_HRMF(Q7_HRMF),
+    .D8_HRMF(Q8_HRMF),
+    .D9_HRMF(Q9_HRMF),
+    .D10_HRMF(Q10_HRMF),
+    .D11_HRMF(Q11_HRMF),
+    .D12_HRMF(Q12_HRMF),
+    .D13_HRMF(Q13_HRMF),
+    .D14_HRMF(Q14_HRMF),
+    .D15_HRMF(Q15_HRMF),
+    .Q0(Q0_INTERFACE2),
+    .Q1(Q1_INTERFACE2),
+    .Q2(Q2_INTERFACE2),
+    .Q3(Q3_INTERFACE2),
+    .Q4(Q4_INTERFACE2),
+    .Q5(Q5_INTERFACE2),
+    .Q6(Q6_INTERFACE2),
+    .Q7(Q7_INTERFACE2),
+    .Q8(Q8_INTERFACE2),
+    .Q9(Q9_INTERFACE2),
+    .Q10(Q10_INTERFACE2),
+    .Q11(Q11_INTERFACE2),
+    .Q12(Q12_INTERFACE2),
+    .Q13(Q13_INTERFACE2),
+    .Q14(Q14_INTERFACE2),
+    .Q15(Q15_INTERFACE2)
+);
+
+TFROM I_TFROM_0 (
+    .CLK(CLK),
+    .RSTn(RSTn),
+    .EXP0(EXP0),
+    .EXP1(EXP1),
+    .EXP2(EXP2),
+    .EXP3(EXP3),
+    .EXP4(EXP4),
+    .EXP5(EXP5),
+    .EXP6(EXP6),
+    .EXP7(EXP7),
+    .EXP8(EXP8),
+    .EXP9(EXP9),
+    .EXP10(EXP10),
+    .EXP11(EXP11),
+    .EXP12(EXP12),
+    .EXP13(EXP13),
+    .EXP14(EXP14),
+    .EXP15(EXP15),
+    .TF0(TF0),
+    .TF1(TF1),
+    .TF2(TF2),
+    .TF3(TF3),
+    .TF4(TF4),
+    .TF5(TF5),
+    .TF6(TF6),
+    .TF7(TF7),
+    .TF8(TF8),
+    .TF9(TF9),
+    .TF10(TF10),
+    .TF11(TF11),
+    .TF12(TF12),
+    .TF13(TF13),
+    .TF14(TF14),
+    .TF15(TF15)
+);
+
+assign Q0  = Q0_INTERFACE1;
+assign Q1  = Q1_INTERFACE1;
+assign Q2  = Q2_INTERFACE1;
+assign Q3  = Q3_INTERFACE1;
+assign Q4  = Q4_INTERFACE1;
+assign Q5  = Q5_INTERFACE1;
+assign Q6  = Q6_INTERFACE1;
+assign Q7  = Q7_INTERFACE1;
+assign Q8  = Q8_INTERFACE1;
+assign Q9  = Q9_INTERFACE1;
+assign Q10 = Q10_INTERFACE1;
+assign Q11 = Q11_INTERFACE1;
+assign Q12 = Q12_INTERFACE1;
+assign Q13 = Q13_INTERFACE1;
+assign Q14 = Q14_INTERFACE1;
+assign Q15 = Q15_INTERFACE1;
+
+endmodule

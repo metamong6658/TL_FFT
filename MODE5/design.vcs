@@ -1,0 +1,11 @@
+// *** RTL Design *** //
+../vg_CTRL.v
+../vg_M16SRAM.v
+../vg_HRMF.v
+../vg_INTERFACE1.v
+../vg_INTERFACE2.v
+../vg_TFROM.v
+../vg_TOP.v
+
+// *** Testbench *** //
+../sv_TB_TOP.sv
