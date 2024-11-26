@@ -100,5 +100,5 @@ We include two additional modes for $r = 2$, representing the two-level factoriz
 
 # Thanks for Watching
 
-Thank you for exploring our work! The TL-FFT is an efficient FFT design optimized for accelerating polynomial multiplication by leveraging FFT. However, certain algorithms, such as CKKS, require the use of NTT instead of FFT. Unfortunately, the NTT algorithm has limitations when it comes to adopting high-radix techniques like those used in FFT, making it challenging to directly map TL-FFT to NTT. We are committed to exploring solutions to adapt TL-FFT into an efficient NTT accelerator. See you again soon!  
+Thank you for exploring our work! The TL-FFT is an efficient FFT design optimized for accelerating polynomial multiplication by leveraging FFT such as TFHE. However, certain algorithms, such as CKKS, require the use of NTT instead of FFT. Unfortunately, the NTT algorithm has limitations when it comes to adopting high-radix techniques like those used in FFT, making it challenging to directly map TL-FFT to NTT. We are committed to exploring solutions to adapt TL-FFT into an efficient NTT accelerator. See you again soon!  
 
