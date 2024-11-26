@@ -310,7 +310,8 @@ module R16BFU (
 );
 
 // Plea note that R16BFU is implemented using mixed-radix property.
-// We factorize 16 into 8 x 2.
+// We factorize 16 into ((2 x 2) x 2) x 2.Therefore, we utilize even fize-level factorization at now.
+// However, it's not crucial. You don't need to know that the mixed-radix property.   
 // If you want to apply bit-reverse property,
 // Then, you should factorize 16 into 2 x 2 x 2 x 2.
 
@@ -367,7 +368,8 @@ module R8BFU (
 );
 
 // Plea note that R8BFU is implemented using mixed-radix property.
-// We factorize 8 into 4 x 2.
+// We factorize 8 into (2 x 2) x 2.Therefore, we utilize even four-level factorization at now.
+// However, it's not crucial. You don't need to know that the mixed-radix property.  
 // If you want to apply bit-reverse property,
 // Then, you should factorize 8 into 2 x 2 x 2.
 
