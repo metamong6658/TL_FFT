@@ -91,7 +91,12 @@ You will be able to run various TL-FFT modes by typing the following command in 
 
 We recommend analyzing `MODE I`, `MODE II`, and `MODE III` to observe how varying $L$ affects the outcome when $r$ is fixed, and exploring `MODE I`, `MODE IV`, and `MODE V` to examine the impact of varying $r$ while keeping $L$ constant.  
 
-We will include two additional modes for $r = 2$, representing the two-level factorization case. We hope this helps you understand the notable efficiency of our TL-FFT, which leverages three-level factorization, compared to conventional two-level factorization FFT architectures.  
+| MODE | Command       | r  | L  | N          |
+|------|---------------|----|----|------------|
+| VI   | make mode6    | 2  | 2  | $2^{4}$    |
+| VII  | make mode7    | 2  | 3  | $2^{6}$    |
+
+We include two additional modes for $r = 2$, representing the two-level factorization case. We hope this helps you understand the notable efficiency of our TL-FFT, which leverages three-level factorization, compared to conventional two-level factorization FFT architectures.  
 
 # Thanks for Watching
 
